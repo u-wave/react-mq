@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "@u-wave/react-mq-example",
+  "description": "react-mq example.",
+  "version": "0.0.0-example",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build",
+    "build": "npm run build:frame && npm run build:main",
+    "build:main": "cross-env BABEL_ENV=cjs browserify -t babelify frame.js > frame-bundle.js",
+    "build:frame": "cross-env BABEL_ENV=cjs browserify -t babelify app.js > bundle.js",
+    "start": "ecstatic ."
+  },
+  "dependencies": {
+    "ecstatic": "^3.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.51",
+    "babelify": "^9.0.0",
+    "browserify": "^16.0.0",
+    "cross-env": "^5.1.6"
+  }
+}
