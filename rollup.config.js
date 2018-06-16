@@ -7,7 +7,12 @@ process.env.BABEL_ENV = 'rollup';
 export default {
   input: './src/index.js',
   output: [
-    { format: 'cjs', file: meta.main, exports: 'named', interop: false },
+    {
+      format: 'cjs',
+      file: meta.main,
+      exports: 'named',
+      interop: false,
+    },
     { format: 'es', file: meta.module },
   ],
 
