@@ -4,7 +4,7 @@ Barebones CSS media query component for React
 
 [Install][] - [Usage][] - [Demo][] - [Props][]
 
-## Install [![size](https://img.shields.io/bundlephobia/minzip/@u-wave/react-mq.svg)](https://bundlephobia.com/result?p=@u-wave/react-mq)
+## Install
 
 ```
 npm install --save @u-wave/react-mq
