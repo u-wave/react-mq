@@ -13,7 +13,6 @@ export default class MediaQuery extends React.Component {
   constructor(props) {
     super(props);
 
-    this.prevQuery = props.query;
     this.query = matchMedia(props.query);
     this.state = {
       matches: this.query.matches,
@@ -24,21 +23,16 @@ export default class MediaQuery extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    this.update();
-  }
-
-  update() {
-    if (this.props.query === this.prevQuery) return;
+  componentDidUpdate(prevProps) {
+    if (this.props.query === prevProps.query) return;
 
     this.query = matchMedia(this.props.query);
     addChangeListener(this.query, ({ matches }) => {
       this.setState({ matches });
     });
 
+    // eslint-disable-next-line react/no-did-update-set-state
     this.setState({ matches: this.query.matches });
-
-    this.prevQuery = this.props.query;
   }
 
   render() {
