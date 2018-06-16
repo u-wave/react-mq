@@ -1,0 +1,59 @@
+{
+  "name": "@u-wave/react-mq",
+  "version": "0.0.0",
+  "description": "Barebones CSS media query component for React",
+  "main": "dist/react-mq.js",
+  "module": "dist/react-mq.es.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rollup -c",
+    "lint": "eslint --cache .",
+    "test": "npm run lint && cross-env BABEL_ENV=test mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u-wave/react-mq.git"
+  },
+  "keywords": [
+    "react",
+    "media-query",
+    "css",
+    "responsive"
+  ],
+  "author": "Renée Kooi <renee@kooi.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/u-wave/react-mq/issues"
+  },
+  "homepage": "https://github.com/u-wave/react-mq#readme",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.51",
+    "@babel/preset-env": "7.0.0-beta.51",
+    "@babel/preset-react": "7.0.0-beta.51",
+    "@babel/register": "7.0.0-beta.51",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "expect": "^1.20.2",
+    "mocha": "^5.1.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
+    "rollup": "^0.60.7",
+    "rollup-plugin-babel": "^4.0.0-beta.4"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "expect"
+    ]
+  }
+}
