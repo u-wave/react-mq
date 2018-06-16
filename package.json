@@ -1,6 +1,6 @@
 {
   "name": "@u-wave/react-mq",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Barebones CSS media query component for React",
   "main": "dist/react-mq.js",
   "module": "dist/react-mq.es.js",
