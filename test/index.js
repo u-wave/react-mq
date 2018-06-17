@@ -57,6 +57,13 @@ describe('MediaQuery', () => {
     expect(renderer.toJSON()).toMatch({ type: 'h1' });
   });
 
+  it('removes the listener when unmounting', () => {
+    const renderer = TestRenderer.create(<MediaQuery query="all"><h1 /></MediaQuery>);
+    expect(listener).toBeA('function');
+    renderer.update(<div />);
+    expect(listener).toBe(null);
+  });
+
   it('calls render() prop with bool matches', () => {
     mockChange(false);
     const renderer = TestRenderer.create((

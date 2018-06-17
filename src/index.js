@@ -9,6 +9,14 @@ function addChangeListener(mq, handler) {
   }
 }
 
+function removeChangeListener(mq, handler) {
+  if (mq.removeEventListener) {
+    mq.removeEventListener('change', handler);
+  } else {
+    mq.removeListener(handler);
+  }
+}
+
 export default class MediaQuery extends React.Component {
   constructor(props) {
     super(props);
@@ -18,21 +26,27 @@ export default class MediaQuery extends React.Component {
       matches: this.query.matches,
     };
 
-    addChangeListener(this.query, ({ matches }) => {
-      this.setState({ matches });
-    });
+    this.handleChange = this.handleChange.bind(this);
+
+    addChangeListener(this.query, this.handleChange);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.query === prevProps.query) return;
 
+    removeChangeListener(this.query, this.handleChange);
     this.query = matchMedia(this.props.query);
-    addChangeListener(this.query, ({ matches }) => {
-      this.setState({ matches });
-    });
+    addChangeListener(this.query, this.handleChange);
 
-    // eslint-disable-next-line react/no-did-update-set-state
-    this.setState({ matches: this.query.matches });
+    this.handleChange(this.query);
+  }
+
+  componentWillUnmount() {
+    removeChangeListener(this.query, this.handleChange);
+  }
+
+  handleChange({ matches }) {
+    this.setState({ matches });
   }
 
   render() {
