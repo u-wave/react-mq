@@ -1,5 +1,7 @@
 # @u-wave/react-mq
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/u-wave/react-mq.svg)](https://greenkeeper.io/)
+
 Barebones CSS media query component for React
 
 [Install][] - [Usage][] - [Demo][] - [Props][]
