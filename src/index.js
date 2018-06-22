@@ -32,10 +32,11 @@ export default class MediaQuery extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.query === prevProps.query) return;
+    const { query } = this.props;
+    if (query === prevProps.query) return;
 
     removeChangeListener(this.query, this.handleChange);
-    this.query = matchMedia(this.props.query);
+    this.query = matchMedia(query);
     addChangeListener(this.query, this.handleChange);
 
     this.handleChange(this.query);
@@ -50,9 +51,10 @@ export default class MediaQuery extends React.Component {
   }
 
   render() {
+    const { render, children } = this.props;
     const { matches } = this.state;
-    if (this.props.render) return this.props.render(matches);
-    if (matches) return this.props.children;
+    if (render) return render(matches);
+    if (matches) return children;
     return null;
   }
 }
