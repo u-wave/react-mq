@@ -33,32 +33,56 @@ describe('MediaQuery', () => {
   });
 
   it('renders children when query matches', () => {
-    const renderer = TestRenderer.create(<MediaQuery query="all"><h1 /></MediaQuery>);
+    const renderer = TestRenderer.create((
+      <MediaQuery query="all">
+        <h1 />
+      </MediaQuery>
+    ));
     expect(renderer.toJSON()).toMatch({ type: 'h1' });
   });
 
   it('does not render children when query does not match', () => {
-    const renderer = TestRenderer.create(<MediaQuery query="none"><h1 /></MediaQuery>);
+    const renderer = TestRenderer.create((
+      <MediaQuery query="none">
+        <h1 />
+      </MediaQuery>
+    ));
     expect(renderer.toJSON()).toMatch(null);
   });
 
   it('uses a different query when the prop changes', () => {
-    const renderer = TestRenderer.create(<MediaQuery query="all"><h1 /></MediaQuery>);
+    const renderer = TestRenderer.create((
+      <MediaQuery query="all">
+        <h1 />
+      </MediaQuery>
+    ));
     expect(renderer.toJSON()).toMatch({ type: 'h1' });
-    renderer.update(<MediaQuery query="none"><h1 /></MediaQuery>);
+    renderer.update((
+      <MediaQuery query="none">
+        <h1 />
+      </MediaQuery>
+    ));
     expect(renderer.toJSON()).toMatch(null);
   });
 
   it('listens for media query match changes', () => {
     mockChange(false);
-    const renderer = TestRenderer.create(<MediaQuery query="(min-width: 768px)"><h1 /></MediaQuery>);
+    const renderer = TestRenderer.create((
+      <MediaQuery query="(min-width: 768px)">
+        <h1 />
+      </MediaQuery>
+    ));
     expect(renderer.toJSON()).toMatch(null);
     mockChange(true);
     expect(renderer.toJSON()).toMatch({ type: 'h1' });
   });
 
   it('removes the listener when unmounting', () => {
-    const renderer = TestRenderer.create(<MediaQuery query="all"><h1 /></MediaQuery>);
+    const renderer = TestRenderer.create((
+      <MediaQuery query="all">
+        <h1 />
+      </MediaQuery>
+    ));
     expect(listener).toBeA('function');
     renderer.update(<div />);
     expect(listener).toBe(null);

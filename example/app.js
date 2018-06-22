@@ -21,16 +21,17 @@ class MainApp extends React.Component {
   }
 
   render() {
+    const { large } = this.state;
     return (
       <div>
         <p>
-          <input id="size" type="checkbox" checked={this.state.large} onChange={this.handleChange} />
+          <input id="size" type="checkbox" checked={large} onChange={this.handleChange} />
           <label htmlFor="size">
             Large iframe
           </label>
         </p>
         <iframe
-          width={this.state.large ? 800 : 500}
+          width={large ? 800 : 500}
           title="demo iframe"
           src="frame.html"
         />
