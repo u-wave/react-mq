@@ -25,9 +25,9 @@ class MainApp extends React.Component {
     return (
       <div>
         <p>
-          <input id="size" type="checkbox" checked={large} onChange={this.handleChange} />
           <label htmlFor="size">
-            Large iframe
+            <input id="size" type="checkbox" checked={large} onChange={this.handleChange} />
+            <span>Large iframe</span>
           </label>
         </p>
         <iframe
