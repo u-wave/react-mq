@@ -26,7 +26,9 @@ export default class MediaQuery extends React.Component {
       matches: this.query.matches,
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = ({ matches }) => {
+      this.setState({ matches });
+    };
 
     addChangeListener(this.query, this.handleChange);
   }
@@ -44,10 +46,6 @@ export default class MediaQuery extends React.Component {
 
   componentWillUnmount() {
     removeChangeListener(this.query, this.handleChange);
-  }
-
-  handleChange({ matches }) {
-    this.setState({ matches });
   }
 
   render() {
