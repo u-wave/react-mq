@@ -38,7 +38,7 @@ describe('MediaQuery', () => {
         <h1 />
       </MediaQuery>
     ));
-    expect(renderer.toJSON()).toMatch({ type: 'h1' });
+    expect(renderer.toJSON()).toMatchObject({ type: 'h1' });
   });
 
   it('does not render children when query does not match', () => {
@@ -47,7 +47,7 @@ describe('MediaQuery', () => {
         <h1 />
       </MediaQuery>
     ));
-    expect(renderer.toJSON()).toMatch(null);
+    expect(renderer.toJSON()).toBe(null);
   });
 
   it('uses a different query when the prop changes', () => {
@@ -56,13 +56,13 @@ describe('MediaQuery', () => {
         <h1 />
       </MediaQuery>
     ));
-    expect(renderer.toJSON()).toMatch({ type: 'h1' });
+    expect(renderer.toJSON()).toMatchObject({ type: 'h1' });
     renderer.update((
       <MediaQuery query="none">
         <h1 />
       </MediaQuery>
     ));
-    expect(renderer.toJSON()).toMatch(null);
+    expect(renderer.toJSON()).toBe(null);
   });
 
   it('listens for media query match changes', () => {
@@ -72,9 +72,9 @@ describe('MediaQuery', () => {
         <h1 />
       </MediaQuery>
     ));
-    expect(renderer.toJSON()).toMatch(null);
+    expect(renderer.toJSON()).toBe(null);
     mockChange(true);
-    expect(renderer.toJSON()).toMatch({ type: 'h1' });
+    expect(renderer.toJSON()).toMatchObject({ type: 'h1' });
   });
 
   it('removes the listener when unmounting', () => {
@@ -83,7 +83,7 @@ describe('MediaQuery', () => {
         <h1 />
       </MediaQuery>
     ));
-    expect(listener).toBeA('function');
+    expect(typeof listener).toBe('function');
     renderer.update(<div />);
     expect(listener).toBe(null);
   });
@@ -96,8 +96,8 @@ describe('MediaQuery', () => {
         render={m => (m ? <h1 /> : <h2 />)}
       />
     ));
-    expect(renderer.toJSON()).toMatch({ type: 'h2' });
+    expect(renderer.toJSON()).toMatchObject({ type: 'h2' });
     mockChange(true);
-    expect(renderer.toJSON()).toMatch({ type: 'h1' });
+    expect(renderer.toJSON()).toMatchObject({ type: 'h1' });
   });
 });
