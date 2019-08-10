@@ -7,7 +7,7 @@ const FrameApp = () => (
   <div>
     <MediaQuery
       query="(min-width: 768px)"
-      render={matches => (
+      render={(matches) => (
         <p>
           Matches:
           {JSON.stringify(matches)}
