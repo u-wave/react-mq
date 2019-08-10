@@ -93,7 +93,7 @@ describe('MediaQuery', () => {
     const renderer = TestRenderer.create((
       <MediaQuery
         query="(min-width: 768px)"
-        render={m => (m ? <h1 /> : <h2 />)}
+        render={(m) => (m ? <h1 /> : <h2 />)}
       />
     ));
     expect(renderer.toJSON()).toMatchObject({ type: 'h2' });
