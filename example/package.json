@@ -9,12 +9,12 @@
     "build": "npm run build:frame && npm run build:main",
     "build:main": "cross-env BABEL_ENV=cjs browserify -t babelify frame.js > frame-bundle.js",
     "build:frame": "cross-env BABEL_ENV=cjs browserify -t babelify app.js > bundle.js",
-    "start": "ecstatic ."
+    "start": "serve ."
   },
   "dependencies": {
-    "ecstatic": "^3.3.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "serve": "^11.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
