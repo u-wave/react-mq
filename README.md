@@ -2,6 +2,8 @@
 
 Barebones CSS media query component for React
 
+For new projects, you can use a React Hook for handling media queries. I like [use-mediaquery][] but there are many others!
+
 [Install][] - [Usage][] - [Demo][] - [Props][]
 
 ## Install
@@ -39,6 +41,7 @@ Either one of the `children` or `render()` props must be provided.
 
 ## Related
 
+* [use-mediaquery][] - A similarly minimalist React Hook.
 * [react-responsive](https://github.com/contra/react-responsive) - The primary inspiration for this module. It also supports specifying media query properties like `min-width` as props. It has broader browser support than alternatives.
 * [react-media](https://github.com/ReactTraining/react-media) - Supports specifying media query properties as an object. It doesn't support the simple boolean `<Media>Rendered if match</Media>` syntax.
 
@@ -53,3 +56,4 @@ Either one of the `children` or `render()` props must be provided.
 [Demo source code]: ./example
 [MIT]: ./LICENSE
 [Media queries]: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+[use-mediaquery]: https://github.com/WickyNilliams/use-mediaquery
