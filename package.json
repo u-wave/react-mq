@@ -8,7 +8,7 @@
     "prepare": "npm run build",
     "build": "rollup -c",
     "lint": "eslint --cache .",
-    "test": "npm run lint && cross-env BABEL_ENV=test mocha"
+    "test": "npm run lint && cross-env BABEL_ENV=test mocha --require @babel/register"
   },
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "expect": "^26.0.0",
-    "mocha": "^7.0.0",
+    "mocha": "^8.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
