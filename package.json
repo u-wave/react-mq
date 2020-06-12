@@ -8,7 +8,7 @@
     "prepare": "npm run build",
     "build": "rollup -c",
     "lint": "eslint --cache .",
-    "test": "npm run lint && cross-env BABEL_ENV=test mocha"
+    "test": "npm run lint && cross-env BABEL_ENV=test mocha --require @babel/register"
   },
   "repository": {
     "type": "git",
