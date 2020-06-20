@@ -1,7 +1,7 @@
 module.exports = {
   extends: 'airbnb',
   env: {
-    browser: true
+    browser: true,
   },
   rules: {
     // Unnecessary for a library IMO
@@ -10,6 +10,6 @@ module.exports = {
     'react/require-default-props': 'off',
     // Our babel config doesn't have class properties
     'react/state-in-constructor': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
-  }
-}
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+  },
+};
