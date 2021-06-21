@@ -45,7 +45,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "expect": "^26.0.0",
-    "mocha": "^8.0.1",
+    "mocha": "^9.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
